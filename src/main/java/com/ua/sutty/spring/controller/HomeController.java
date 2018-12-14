@@ -27,7 +27,6 @@ public class HomeController {
     @GetMapping("/home")
     public String getHomePage(Authentication authentication,
                               Model model, HttpServletRequest request) {
-
         User loggedInUser = ((UserDetailsImpl) authentication.getPrincipal()).getUser();
         if (loggedInUser.getRole().getId() == 1) {
             List<UserDto> userDto = userService.findAll().stream()

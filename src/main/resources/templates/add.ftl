@@ -108,7 +108,7 @@
         <label class="control-label col-sm-3"
                for="First Name">First Name:</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" id="First Name"
+            <input type="text" class="form-control" id="firstName"
                    placeholder="Enter first name" name="firstName" aria-describedby=firstNameHelpInline"
                    pattern="^[A-Z]{1}[a-z]{1,25}"
                    title=" Only latin letter. First letter must be uppercase. For example Sutty"
@@ -130,7 +130,7 @@
         <label class="control-label col-sm-3"
                for="Last Name">Last Name:</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control" id="Last Name"
+            <input type="text" class="form-control" id="lastName"
                    placeholder="Enter last name" name="lastName" aria-describedby=lastNameHelpInline"
                    title=" Only latin letter. First letter must be uppercase. For example Read"
                    <#if newUser??>value="${newUser.lastName}"</#if>

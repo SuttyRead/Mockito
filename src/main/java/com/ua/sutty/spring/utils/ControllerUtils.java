@@ -1,4 +1,4 @@
-package com.ua.sutty.spring.controller;
+package com.ua.sutty.spring.utils;
 
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;

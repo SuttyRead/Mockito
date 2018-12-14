@@ -1,4 +1,4 @@
-package com.ua.sutty.spring.validate;
+package com.ua.sutty.spring.utils;
 
 import com.ua.sutty.spring.form.UserForm;
 import com.ua.sutty.spring.service.UserService;
@@ -6,13 +6,13 @@ import org.springframework.ui.Model;
 
 import java.time.LocalDate;
 
-public class ValidateForm {
+public class ValidateUtis {
 
     private Model model;
     private UserService userService;
     private UserForm userForm;
 
-    public ValidateForm(Model model, UserService userService, UserForm userForm) {
+    public ValidateUtis(Model model, UserService userService, UserForm userForm) {
         this.model = model;
         this.userService = userService;
         this.userForm = userForm;

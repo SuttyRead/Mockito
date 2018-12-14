@@ -30,8 +30,8 @@
             </#if>
         </ul>
         <#if name??>
-            ${name},
-            <a href="/logout"> Logout</a>
+            <div id="navbar-name">${name}</div>,
+            <a href="/logout">Logout</a>
         </#if>
     </div>
 </nav>

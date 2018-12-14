@@ -3,7 +3,8 @@ package com.ua.sutty.spring.controller;
 import com.ua.sutty.spring.domain.User;
 import com.ua.sutty.spring.form.UserForm;
 import com.ua.sutty.spring.service.UserService;
-import com.ua.sutty.spring.validate.ValidateForm;
+import com.ua.sutty.spring.utils.ControllerUtils;
+import com.ua.sutty.spring.utils.ValidateUtis;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -41,7 +42,7 @@ public class EditController {
     @PostMapping("/edit/{id}")
     public String edit(@Valid UserForm userForm, BindingResult bindingResult,
                        Model model, @PathVariable Long id) {
-        ValidateForm form = new ValidateForm(model, userService, userForm);
+        ValidateUtis form = new ValidateUtis(model, userService, userForm);
         if (!form.checkIncorrectDate() | !form.checkMatchPassword()
                 | bindingResult.hasErrors()) {
             Map<String, String> errors = ControllerUtils.getErrors(bindingResult);

@@ -4,7 +4,8 @@ import com.ua.sutty.spring.dto.CaptchaResponseDto;
 import com.ua.sutty.spring.form.UserForm;
 import com.ua.sutty.spring.service.SignUpService;
 import com.ua.sutty.spring.service.UserService;
-import com.ua.sutty.spring.validate.ValidateForm;
+import com.ua.sutty.spring.utils.ControllerUtils;
+import com.ua.sutty.spring.utils.ValidateUtis;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -54,7 +55,7 @@ public class RegistrationController {
     public String registration(@Valid UserForm userForm,
                                @RequestParam("g-recaptcha-response") String captchaResponse,
                                BindingResult bindingResult, Model model) {
-
+        System.out.println("CaptchaResponse = " + captchaResponse);
         String url = String.format(CAPTCHA_URL, secret, captchaResponse);
         CaptchaResponseDto response = restTemplate.postForObject(
                 url, Collections.emptyList(), CaptchaResponseDto.class);
@@ -63,7 +64,7 @@ public class RegistrationController {
             model.addAttribute("captchaError", "Fill captcha");
         }
 
-        ValidateForm form = new ValidateForm(model, userService, userForm);
+        ValidateUtis form = new ValidateUtis(model, userService, userForm);
         if (!form.checkAlreadyExist() || !form.checkIncorrectDate() || !response.isSuccess()
                 || !form.checkMatchPassword() || bindingResult.hasErrors()) {
             Map<String, String> errors = ControllerUtils.getErrors(bindingResult);

@@ -1,4 +1,4 @@
-package com.ua.sutty.hibernate.repository.impl;
+package com.ua.sutty.spring.service;
 
 import com.ua.sutty.spring.app.Application;
 import com.ua.sutty.spring.domain.Role;
@@ -59,6 +59,11 @@ public class UserServiceTest {
     @Test(expected = NullPointerException.class)
     public void testFindUserByEmailNull() {
         userService.findUserByEmail(null);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void testFindUserByIdNull() {
+        userService.findUserById(null);
     }
 
     @Test(expected = NullPointerException.class)

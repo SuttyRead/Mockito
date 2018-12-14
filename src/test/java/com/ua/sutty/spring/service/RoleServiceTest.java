@@ -1,4 +1,4 @@
-package com.ua.sutty.hibernate.repository.impl;
+package com.ua.sutty.spring.service;
 
 import com.ua.sutty.spring.app.Application;
 import com.ua.sutty.spring.domain.Role;

@@ -23,7 +23,7 @@
                    title="Uppercase and lowercase letter. Must be 2-20 characters. Without specifically characters #,$,% and so on. For example SuttyRead"
                    aria-describedby="loginHelpInline"
                    value="${userForEdit.login}"
-                   required>
+                   required="required"/>
             <small id="loginHelpInline" class="text-muted">
                 Must be 2-20 characters long.
             </small>
@@ -54,7 +54,7 @@
                    aria-describedby="passwordHelpInline"
                    pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
                    title="Password must be have lowercase and uppercase Latin letters, number. Minimum 8 characters"
-                   value="${userForEdit.password}" required>
+                   value="${userForEdit.password}" required="required"/>
             <small id="passwordHelpInline" class="text-muted">
                 Lowercase and uppercase Latin letters, numbers, special characters. Minimum 8 characters
             </small>
@@ -85,7 +85,7 @@
                    placeholder="Confirm password" name="confirmPassword"
                    pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
                    title="Password must be have lowercase and uppercase Latin letters, number. Minimum 8 characters"
-                   value="${userForEdit.password}" required>
+                   value="${userForEdit.password}" required="required"/>
         </div>
     </div>
 
@@ -97,7 +97,7 @@
                    placeholder="Enter email" name="email" aria-describedby="emailHelpInline"
                    pattern="\w+([\.-]?\w+)*@\w+([\.-]?\w+)*\.\w{2,4}"
                    title="Enter correct email. Email must be have @. For example SuttyRead@gmail.com"
-                   value="${userForEdit.email}" required>
+                   value="${userForEdit.email}" required="required"/>
         </div>
         <div class="col-sm-offset-3 col-sm-6 err-message">
             <#if emailNotPattern??>
@@ -115,10 +115,10 @@
                for="First Name">First Name:</label>
         <div class="col-sm-6">
             <input type="text" class="form-control" id="First Name"
-                   placeholder="Enter first name" name="firstName" aria-describedby=firstNameHelpInline"
+                   placeholder="Enter first name" name="firstName" aria-describedby="firstNameHelpInline"
                    pattern="^[A-Z]{1}[a-z]{1,25}"
                    title=" Only latin letter. First letter must be uppercase. For example Sutty"
-                   value="${userForEdit.firstName}" required>
+                   value="${userForEdit.firstName}" required="required"/>
         </div>
         <div class="col-sm-offset-3 col-sm-6 err-message">
             <#if firstNameNotPattern??>
@@ -136,9 +136,9 @@
                for="Last Name">Last Name:</label>
         <div class="col-sm-6">
             <input type="text" class="form-control" id="Last Name"
-                   placeholder="Enter last name" name="lastName" aria-describedby=lastNameHelpInline"
+                   placeholder="Enter last name" name="lastName" aria-describedby="lastNameHelpInline"
                    title=" Only latin letter. First letter must be uppercase. For example Read"
-                   pattern="^[A-Z]{1}[a-z]{1,25}" value="${userForEdit.lastName}" required>
+                   pattern="^[A-Z]{1}[a-z]{1,25}" value="${userForEdit.lastName}" required="required"/>
         </div>
         <div class="col-sm-offset-3 col-sm-6 err-message">
             <#if lastNameNotPattern??>
@@ -156,7 +156,8 @@
                for="Birthday">Birthday:</label>
         <div class="col-sm-6">
             <input type="date" class="form-control" id="Birthday"
-                   placeholder="Enter birthday" name="birthday" required value="${userForEdit.birthday}">
+                   placeholder="Enter birthday" name="birthday" required="required"
+                   value="${userForEdit.birthday}"/>
         </div>
         <div class="col-sm-offset-3 col-sm-6 err-message">
             <#if incorrectDate??>
